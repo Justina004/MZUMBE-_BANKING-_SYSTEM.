@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <mata charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Mzumbe Bank -Management System</title>
+            <link rel="stylesheet" href="MUBanking.css">
+        </head>
+        <body>
+            <div class="container">
+                <header>
+                    <h1>Mzumbe Bank</h1>
+                    <p>Simple Bank Management System</p>
+                </header>
+
+                <div class="grid">
+                    <!-- Create Account-->
+                     <div class="card">
+                        <h2> Create Account</h2>
+                        <input type="text" id="accName" placeholder="Full Name">
+                        <input type="number" id="accDeposit" placeholder="Initial Deposit TZS" min="0">
+                        <button onclick="createAccount()">Create Account</button>
+                </div>
+                
+                <!--Deposit/Withdraw -->
+                <div class="card">
+                    <h2>Transaction</h2>
+                    <input type="number" id="accNumber" placeholder="Account Number">
+                    <input type="number" id="amount" placeholder="Amount TZS" min="1">
+                    <div class="btn-group">
+                        <button class="deposit" onclick="deposit()">Deposit</button>
+                        <button class="withdraw" onclick="withdraw">Withdraw</button>
+                    </div>
+                </div>
+
+                <!-- Transfer-->
+                <div class="card">
+                    <h2>Transfer Money</h2>
+                    <input type="number" id="formAcc" placeholder="From Account No">
+                    <input type="number" id="toAcc" placeholder="To Account No">
+                    <input type="number" id="transferAmt" placeholder="Amount TZS" min="1">
+                        <button class onclick="transfer()">Transfer</button>
+                </div>
+              
+                <!-- Search-->
+                <div class="card">
+                    <h2>Search Account</h2>
+                    <input type="number" id="searchAcc" placeholder="Enter Account Number">
+                    <button onclick="searchAccount()">Search</button>
+                    <button class="delete" onclick="deleteAccount()">Delete</button>
+                    </div>
+                 </div>
+
+
+               <!--Account Details -->
+                <div id="accountDetails" class="card hidden">
+                    <h2>Account Details</h2>
+                    <div id="detailsContent"></div>
+                    <h3>Transaction history</h3>
+                    <table id="txnTable">
+                        <thead><tr><th><th>Date</th><th>Amount</th><th>Balance</th></tr></thead>
+                    <tbody></tbody>
+                    </table>
+                </div>
+
+                <!-- All Accounts-->
+                 <div class="card">
+                    <h2>All Accounts</h2>
+                    <table id="accountsTable">
+                        <thead><tr><th>Acc No</th><th>Name</th><th>Balance</th><th>Status</th></tr></thead>
+                        <tbody></tbody>
+                        </table>
+                    </div>
+                    </div>
+
+                    <script src="BankingJS.js"></script>
+                    </body>
+                </html>
+
+
+                        
+                        
